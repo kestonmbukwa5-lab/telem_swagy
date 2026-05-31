@@ -1,0 +1,17 @@
+﻿services:
+  - type: web
+    name: telemswagy-api
+    runtime: node
+    buildCommand: npm ci
+    startCommand: node api/server.js
+    envVars:
+      - key: SMTP_HOST
+        scope: run
+      - key: SMTP_PORT
+        scope: run
+      - key: SMTP_USER
+        scope: run
+      - key: SMTP_PASS
+        scope: run
+      - key: FROM_EMAIL
+        scope: run
