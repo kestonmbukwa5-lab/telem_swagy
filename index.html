@@ -185,9 +185,10 @@
           <h2>Get new music drops first</h2>
           <p>Join the TELEM SWAGY newsletter for exclusive updates, show announcements, and early merch access.</p>
         </div>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" aria-label="Email address" />
+        <form class="newsletter-form" id="newsletterForm">
+          <input id="newsletterEmail" name="email" type="email" placeholder="Your email address" aria-label="Email address" required />
           <button class="btn btn-primary" type="submit">Subscribe</button>
+          <div id="newsletterMessage" class="newsletter-message" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>

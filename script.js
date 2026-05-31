@@ -53,3 +53,41 @@ window.addEventListener('load', () => {
     setActiveLink(`#${sections[0].id}`);
   }
 });
+
+// Newsletter form handling
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  const emailInput = document.getElementById('newsletterEmail');
+  const msg = document.getElementById('newsletterMessage');
+  newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.textContent = '';
+    const email = (emailInput.value || '').trim();
+    if (!email) return (msg.textContent = 'Please enter a valid email.');
+
+    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Subscribing...';
+
+    try {
+      const res = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        msg.textContent = 'Thanks! Check your email for confirmation.';
+        newsletterForm.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        msg.innerHTML = `Subscription failed. Try emailing <a href="mailto:contact@telemswagy.com">contact@telemswagy.com</a> instead.`;
+      }
+    } catch (err) {
+      // likely the API isn't deployed to this origin (GitHub Pages)
+      msg.innerHTML = 'Subscription server not reachable from this host. You can email <a href="mailto:contact@telemswagy.com">contact@telemswagy.com</a> to subscribe.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Subscribe';
+    }
+  });
+}
