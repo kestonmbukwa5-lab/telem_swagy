@@ -80,7 +80,7 @@ textarea {
   color: #ffb347;
 }
 
-..nav-toggle {
+.nav-toggle {
   display: none;
   background: transparent;
   border: none;
@@ -89,7 +89,9 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.35rem;
+  padding: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .nav-toggle span {
@@ -572,6 +574,15 @@ textarea {
 @media (max-width: 720px) {
   .site-header {
     flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .brand p {
+    font-size: 0.85rem;
   }
 
   .site-nav {
@@ -598,10 +609,225 @@ textarea {
 
   .site-nav a {
     display: block;
-    padding: 0.75rem 0;
+    padding: 0.85rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-toggle {
     display: flex;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    min-width: 110px;
+    padding: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .stat-card strong {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 0 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .featured-release,
+  .about,
+  .music,
+  .merch,
+  .testimonials,
+  .newsletter,
+  .contact {
+    padding: 1.75rem 1rem;
+  }
+
+  .release-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .release-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .track-card {
+    grid-template-columns: 50px 1fr auto;
+    gap: 0.75rem;
+  }
+
+  .track-number {
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 0.9rem;
+  }
+
+  .track-card button {
+    min-width: 80px;
+    min-height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-form input {
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .section-title span,
+  .section-label {
+    font-size: 0.75rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand p {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 0.75rem 0 0.75rem;
+  }
+
+  .hero p {
+    margin: 0.75rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .stat-card {
+    min-width: 100%;
+    padding: 0.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 1rem;
+  }
+
+  .featured-release,
+  .about,
+  .music,
+  .merch,
+  .testimonials,
+  .newsletter,
+  .contact {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    margin: 0 1rem;
+  }
+
+  .release-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .release-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .release-cover {
+    min-height: 180px;
+  }
+
+  .track-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .track-number {
+    min-width: 100%;
+    min-height: 44px;
+  }
+
+  .track-card button {
+    min-width: 100%;
+    min-height: 44px;
+  }
+
+  .release-info span {
+    min-height: 44px;
+  }
+
+  .newsletter-card {
+    padding: 1.25rem;
+  }
+
+  .newsletter-form input {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 1.25rem;
+  }
+
+  audio {
+    width: 100%;
   }
 }
