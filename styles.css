@@ -97,8 +97,9 @@ textarea {
 .nav-toggle span {
   width: 24px;
   height: 3px;
-  background: #fff;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #ff9a15, #f54f7e);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .hero {
