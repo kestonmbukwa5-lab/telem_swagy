@@ -8,6 +8,18 @@ const validator = require('validator');
 const app = express();
 app.use(bodyParser.json());
 
+// CORS support for GitHub Pages
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 const DATA_FILE = path.join(__dirname, 'subscribers.json');
 fs.ensureFileSync(DATA_FILE);
 
@@ -72,4 +84,10 @@ app.post('/subscribe', async (req, res) => {
 app.get('/_health', (req, res) => res.json({ ok: true }));
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Subscription API running on port ${port}`));
+app.listen(port, '0.0.0.0', () => {
+  console.log(`✅ Subscription API running on port ${port}`);
+  console.log(`📧 SMTP configured: ${process.env.SMTP_HOST ? 'yes' : 'no'}`);
+}).on('error', (err) => {
+  console.error('❌ Failed to start API:', err.message);
+  process.exit(1);
+});
