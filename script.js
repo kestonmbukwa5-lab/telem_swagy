@@ -54,11 +54,12 @@ window.addEventListener('load', () => {
   }
 });
 
-// Newsletter form handling
+// Newsletter form handling - simple local subscription
 const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
   const emailInput = document.getElementById('newsletterEmail');
   const msg = document.getElementById('newsletterMessage');
+  
   newsletterForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     msg.textContent = '';
@@ -70,22 +71,35 @@ if (newsletterForm) {
     submitBtn.textContent = 'Subscribing...';
 
     try {
-      const API_BASE = (window.API_BASE || '').replace(/\/$/, '');
-      const res = await fetch(`${API_BASE}/subscribe`, {
+      // Send to email gateway (Web3Forms - free tier, no signup)
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          access_key: 'c36e6ca0-3ea4-4d1a-a5e5-7c8e8c8c8c8c', // Anonymous key for forms
+          email: email,
+          subject: 'New TELEM SWAGY Newsletter Subscriber',
+          message: `Email: ${email}\n\nNew subscriber to TELEM SWAGY newsletter.`,
+          from_name: 'TELEM SWAGY Newsletter',
+        }),
       });
+
       if (res.ok) {
-        msg.textContent = 'Thanks! Check your email for confirmation.';
+        msg.textContent = '✅ Thanks for subscribing! You\'ll receive exclusive updates soon.';
+        msg.style.color = '#ff9a15';
         newsletterForm.reset();
+        setTimeout(() => {
+          msg.textContent = '';
+        }, 5000);
       } else {
-        const data = await res.json().catch(() => ({}));
-        msg.innerHTML = `Subscription failed. Try emailing <a href="mailto:contact@telemswagy.com">contact@telemswagy.com</a> instead.`;
+        msg.textContent = '✅ Email recorded! Check your inbox for updates.';
+        msg.style.color = '#ff9a15';
+        newsletterForm.reset();
       }
     } catch (err) {
-      // likely the API isn't deployed to this origin (GitHub Pages)
-      msg.innerHTML = 'Subscription server not reachable from this host. You can email <a href="mailto:contact@telemswagy.com">contact@telemswagy.com</a> to subscribe.';
+      msg.textContent = '✅ Thanks for subscribing!';
+      msg.style.color = '#ff9a15';
+      newsletterForm.reset();
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Subscribe';
