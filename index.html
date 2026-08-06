@@ -3,223 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#04050c" />
+  <meta name="theme-color" content="#0a0a0a" />
   <meta name="color-scheme" content="dark" />
+  <meta name="description" content="TELEM SWAGY — official site of D BWOY TELEM. Stream Ku Bar and book shows." />
   <meta name="format-detection" content="telephone=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="TELEM SWAGY" />
   <title>TELEM SWAGY | D BWOY TELEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <span class="logo">TELEM SWAGY</span>
-      <p>Official site of D BWOY TELEM</p>
-    </div>
-    <nav class="site-nav" id="siteNav">
+  <header class="site-header" id="siteHeader">
+    <a class="logo" href="#home">TELEM SWAGY</a>
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#music">Music</a>
       <a href="#merch">Merch</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          class="hero-bg"
+          src="D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.jpeg"
+          alt=""
+        />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="hero-copy">
-        <span class="hero-badge">New single out now</span>
-        <h1>TELEM SWAGY</h1>
-        <p>Experience D BWOY TELEM's electric Zambian sound: hard-hitting beats, melodic hooks, and a stage presence built for the spotlight.</p>
+        <h1 class="hero-brand">TELEM SWAGY</h1>
+        <p class="hero-line">D BWOY TELEM — hard-hitting Zambian sound built for the stage.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#music">Listen Now</a>
           <a class="btn btn-secondary" href="#contact">Book D BWOY</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat-card">
-            <strong>Launched</strong>
-            <span>2026</span>
-          </div>
-          <div class="stat-card">
-            <strong>1</strong>
-            <span>New Single</span>
-          </div>
-          <div class="stat-card">
-            <strong>100%</strong>
-            <span>Real Vibes</span>
-          </div>
-        </div>
       </div>
-      <div class="hero-image">
-        <div class="image-card">
-          <div class="cover-frame">
-            <img src="D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.jpeg" alt="KU BAR cover" class="hero-cover" />
-            <div class="cover-tag">KU BAR</div>
-          </div>
+    </section>
+
+    <section class="about reveal" id="about">
+      <div class="section-inner about-layout">
+        <img
+          class="about-logo"
+          src="telemswagylogo.jpg.jpeg"
+          alt="TELEM SWAGY logo"
+          width="280"
+          height="280"
+        />
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>Born to create bold music</h2>
+          <p>
+            D BWOY TELEM channels city life into every bar — authentic Zambian beats,
+            sharp storytelling, and hooks made for speakers and live crowds.
+            TELEM SWAGY is the official home for drops, shows, and the movement around the music.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="featured-release">
-      <div class="section-title">
-        <span>Spotlight</span>
-        <h2>Latest release: D Bwoy Telem ft. Chef 187, Xaven, Jay Rox — Ku Bar</h2>
-      </div>
-      <div class="release-card">
-        <div>
-          <p class="release-tag">Official audio</p>
-          <h3>D Bwoy Telem ft. Chef 187, Xaven, Jay Rox — Ku Bar</h3>
-          <p>The newest single from D Bwoy Telem is a hard-hitting Zambian anthem featuring Chef187, Xaven, and Jay Rox.</p>
-          <div class="release-actions">
-            <a class="btn btn-primary" href="#music">Stream Track</a>
-            <a class="btn btn-tertiary" href="#contact">Start a Collaboration</a>
-          </div>
-        </div>
-        <div class="release-meta">
-          <img src="D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.jpeg" alt="Ku Bar cover" class="release-cover" />
-          <div class="release-info">
-            <span>2026</span>
-            <span>Single</span>
-            <span>2:58</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="music reveal" id="music">
+      <div class="section-inner">
+        <p class="eyebrow">Music</p>
+        <h2>Ku Bar</h2>
+        <p class="section-lead">
+          D Bwoy Telem ft. Chef 187, Xaven, Jay Rox — the latest single.
+        </p>
 
-    <section class="about" id="about">
-      <div class="section-title">
-        <span>About</span>
-        <h2>Born to create bold music</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>From the neighborhood</h3>
-          <p>D BWOY TELEM channels life in the city into every bar, combining authentic Zambian beats with sharp storytelling and unforgettable hooks.</p>
-        </div>
-        <div class="about-card">
-          <h3>Studio energy</h3>
-          <p>Produced with high impact and stadium-ready sound, each release is crafted to hit hard on speakers and in live performance.</p>
-        </div>
-        <div class="about-card">
-          <h3>Community vibe</h3>
-          <p>TELEM SWAGY is more than music — it’s a movement. Follow the official space for drops, merch, concerts, and fan moments.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="music" id="music">
-      <div class="section-title">
-        <span>Music</span>
-        <h2>Listen to the best of TELEM SWAGY</h2>
-      </div>
-      <div class="music-grid">
-        <article class="track-card">
-          <span class="track-number">01</span>
-          <div>
-            <h3>D Bwoy Telem ft. Chef 187, Xaven, Jay Rox — Ku Bar</h3>
-            <p>A powerful Zambian collaboration with bold beats and a memorable hook.</p>
-            <audio controls src="audio/D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.mp3"></audio>
-            <div class="video-card">
-              <video controls poster="D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.jpeg">
-                <source src="video/ku-bar-sample.mp4" type="video/mp4" />
-                Your browser does not support video playback. Upload a sample video file to the `video/` folder and refresh the page.
-              </video>
-              <p class="video-caption">Sample video preview (video file can be added to `video/ku-bar-sample.mp4`)</p>
+        <div class="player" id="kuBarPlayer" data-src="audio/D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.mp3">
+          <img
+            class="player-cover"
+            src="D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.jpeg"
+            alt="Ku Bar cover art"
+            width="160"
+            height="160"
+          />
+          <div class="player-body">
+            <div class="player-meta">
+              <h3>Ku Bar</h3>
+              <p>D Bwoy Telem ft. Chef 187, Xaven, Jay Rox</p>
+            </div>
+            <div class="player-controls">
+              <button type="button" class="player-play" id="playerPlay" aria-label="Play Ku Bar">
+                <svg class="icon-play" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" hidden>
+                  <path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z" />
+                </svg>
+              </button>
+              <div class="player-progress">
+                <span id="playerCurrent" class="player-time">0:00</span>
+                <input
+                  type="range"
+                  id="playerSeek"
+                  class="player-seek"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="0.1"
+                  aria-label="Seek"
+                />
+                <span id="playerDuration" class="player-time">0:00</span>
+              </div>
             </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="merch" id="merch">
-      <div class="section-title">
-        <span>Merch</span>
-        <h2>Own the official TELEM SWAGY drop</h2>
-      </div>
-      <div class="merch-grid">
-        <div class="card">
-          <h3>TELEM Swagy Tee</h3>
-          <p>Premium cotton tee with bold logo graphics and street-ready design.</p>
-        </div>
-        <div class="card">
-          <h3>Soundwave Cap</h3>
-          <p>Signature fitted cap with stylish embroidery and clean color contrast.</p>
-        </div>
-        <div class="card">
-          <h3>Collector Poster</h3>
-          <p>Limited edition art print featuring the official TELEM SWAGY visuals.</p>
+          <audio id="playerAudio" preload="metadata" src="audio/D-Bwoy-Telem-ft-Chef-187-Xaven-Jay-Rox-Ku-Bar.mp3"></audio>
         </div>
       </div>
     </section>
 
-    <section class="testimonials">
-      <div class="section-title">
-        <span>Fans</span>
-        <h2>What listeners are saying</h2>
-      </div>
-      <div class="testimonial-grid">
-        <article class="testimonial-card">
-          <p>"TELEM SWAGY brings raw energy and a sound that hits deep every time. My favorite new artist."</p>
-          <span>— Maya, fan</span>
-        </article>
-        <article class="testimonial-card">
-          <p>"Every track feels like a story from the streets. The beats are insane and the vibe is unmatched."</p>
-          <span>— Jay, concertgoer</span>
-        </article>
-        <article class="testimonial-card">
-          <p>"From the merch to the music, this is the official artist experience every fan wants."</p>
-          <span>— Rico, supporter</span>
-        </article>
+    <section class="merch reveal" id="merch">
+      <div class="section-inner">
+        <p class="eyebrow">Merch</p>
+        <h2>Official drop coming soon</h2>
+        <p class="section-lead">
+          Tees, caps, and prints under TELEM SWAGY — subscribe below for early access when the store opens.
+        </p>
+        <ul class="merch-list">
+          <li>TELEM Swagy Tee</li>
+          <li>Soundwave Cap</li>
+          <li>Collector Poster</li>
+        </ul>
       </div>
     </section>
 
-    <section class="newsletter">
-      <div class="newsletter-card">
+    <section class="newsletter reveal" id="newsletter">
+      <div class="section-inner newsletter-layout">
         <div>
-          <span class="section-label">Stay connected</span>
+          <p class="eyebrow">Stay connected</p>
           <h2>Get new music drops first</h2>
-          <p>Join the TELEM SWAGY newsletter for exclusive updates, show announcements, and early merch access.</p>
+          <p class="section-lead">
+            Exclusive updates, show announcements, and early merch access.
+          </p>
         </div>
-        <form class="newsletter-form" id="newsletterForm">
-          <input id="newsletterEmail" name="email" type="email" placeholder="Your email address" aria-label="Email address" required />
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required />
           <button class="btn btn-primary" type="submit">Subscribe</button>
-          <div id="newsletterMessage" class="newsletter-message" role="status" aria-live="polite"></div>
+          <p id="newsletterMessage" class="form-message" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="section-title">
-        <span>Contact</span>
-        <h2>Book or follow D BWOY TELEM</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Booking</h3>
-          <p>For shows, collaborations, or brand partnerships, connect directly.</p>
-          <a href="mailto:contact@telemswagy.com" class="link">contact@telemswagy.com</a>
-        </div>
-        <div class="contact-card">
-          <h3>Follow</h3>
-          <p>Get exclusive music drops, behind-the-scenes content, and early access.</p>
-          <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">YouTube</a>
+    <section class="contact reveal" id="contact">
+      <div class="section-inner">
+        <p class="eyebrow">Contact</p>
+        <h2>Book D BWOY TELEM</h2>
+        <p class="section-lead">
+          Shows, collaborations, or brand partnerships — send an inquiry and we will reply by email.
+        </p>
+
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="form-row">
+            <label for="bookName">Name</label>
+            <input id="bookName" name="name" type="text" autocomplete="name" required />
           </div>
-        </div>
+          <div class="form-row">
+            <label for="bookEmail">Email</label>
+            <input id="bookEmail" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="bookType">Event type</label>
+            <select id="bookType" name="eventType" required>
+              <option value="">Select…</option>
+              <option value="Live show">Live show</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Brand partnership">Brand partnership</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="bookMessage">Message</label>
+            <textarea id="bookMessage" name="message" rows="4" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send inquiry</button>
+          <p id="bookingMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="contact-direct">
+          Or email directly:
+          <a class="link" href="mailto:contact@telemswagy.com">contact@telemswagy.com</a>
+        </p>
+        <p class="social-soon">Instagram, TikTok, and YouTube — coming soon.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 TELEM SWAGY | Official website for D BWOY TELEM</p>
+    <img class="footer-logo" src="telemswagylogo.jpg.jpeg" alt="" width="48" height="48" />
+    <p>© 2026 TELEM SWAGY · Official website for D BWOY TELEM</p>
   </footer>
+
+  <!-- Set window.TELEM_API_URL to your Render API origin (no trailing slash) when the backend is live. -->
+  <script>
+    window.TELEM_API_URL = window.TELEM_API_URL || '';
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
